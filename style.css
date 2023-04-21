@@ -1,0 +1,44 @@
+body {
+    padding: 0;
+    text-align: center;
+}
+.button-container {
+    position: relative;
+    width: 40%;
+}
+.alien-img {
+    width: 1350px;
+}
+.beign-game {
+    font-size: xx-large;
+    position: absolute;
+    padding: 35px;
+    background-color: rgb(62, 75, 66);
+    border-radius: 16px;
+    bottom: 50px;
+    left: 1100px;
+    width: 150px;
+}
+#gaming-screen {
+    display: none;
+    width: 1350px;
+    height: 500px;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(./gamingscreenbg.jpg);
+    background-size: cover;
+    animation: slide 3s both infinite;
+}
+@keyframes slide {
+    0% {
+      background-position: 0 -1000px;
+    }
+    95% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 0 50px;
+    }
+  }
