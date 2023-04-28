@@ -1,13 +1,13 @@
-class Enemy {
+class Coin {
     constructor(beginGame) {
         this.beginGame = beginGame;
-        this.right = 60;
+        this.right = 20;
         this.top = Math.floor(Math.random()* 300);
-        this.width = 50;
-        this.height = 100;
+        this.width = 25;
+        this.height = 50;
         this.element = document.createElement("img")
 
-        this.element.src = "./enemy1.png"
+        this.element.src = "./coin.png"
         this.element.style.position = "absolute";
         this.element.style.width = `${this.width}px`;
         this.element.style.height = `${this.height}px`;

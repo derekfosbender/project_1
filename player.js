@@ -54,7 +54,51 @@ class player {
           playerRect.top < enemyRect.bottom &&
           playerRect.bottom > enemyRect.top
         ){
-          console.log("COLLISION@ 💥💥💥💥💥");
+          return true
+        } else {
+          return false;
+        }
+      }
+      didCollide(coin) {
+        const playerRect = this.element.getBoundingClientRect();
+        const coinRect = coin.element.getBoundingClientRect();
+    
+        if(
+          playerRect.left < coinRect.right &&
+          playerRect.right > coinRect.left && 
+          playerRect.top < coinRect.bottom &&
+          playerRect.bottom > coinRect.top
+        ){
+          return true
+        } else {
+          return false;
+        }
+      }
+      didCollide(crazy) {
+        const playerRect = this.element.getBoundingClientRect();
+        const crazyRect = crazy.element.getBoundingClientRect();
+    
+        if(
+          playerRect.left < crazyRect.right &&
+          playerRect.right > crazyRect.left && 
+          playerRect.top < crazyRect.bottom &&
+          playerRect.bottom > crazyRect.top
+        ){
+          return true
+        } else {
+          return false;
+        }
+      }
+      didCollide(extra) {
+        const playerRect = this.element.getBoundingClientRect();
+        const extraRect = extra.element.getBoundingClientRect();
+    
+        if(
+          playerRect.left < extraRect.right &&
+          playerRect.right > extraRect.left && 
+          playerRect.top < extraRect.bottom &&
+          playerRect.bottom > extraRect.top
+        ){
           return true
         } else {
           return false;

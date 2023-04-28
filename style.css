@@ -8,24 +8,23 @@ body {
 }
 .alien-img {
     width: 1350px;
+    height: 805px;
 }
 .end-img {
-    height: 750px;
     width: 1350px;
+    height: 750px;
 }
 #scoreboard {
-    display: block;
-    padding: 0px 0px;
-    justify-content: center;
-  }
+    position: relative;
+}
 .beign-game {
     font-size: xx-large;
     position: absolute;
     padding: 35px;
-    background-color: rgb(62, 75, 66);
+    background-color: rgb(193, 238, 231);
     border-radius: 16px;
     bottom: 50px;
-    left: 1100px;
+    left: 100px;
     width: 150px;
 }
 
@@ -44,10 +43,10 @@ body {
     animation: gaming-screen 50s linear infinite;
 }
 @keyframes gaming-screen {
-    from {
+    to {
       background-position: 0 0;
     }
-    to {
+    from {
         background-position: 10000px 0;
     }
   }
@@ -55,11 +54,11 @@ body {
     font-size: xx-large;
     position: absolute;
     padding: 35px;
-    background-color: rgb(62, 75, 66);
+    background-color: rgb(243, 239, 189);
     border-radius: 16px;
     bottom: 50px;
     left: 1100px;
-    width: 150px;
+    width: 175px;
 }
 #the-end {
     display: none;
