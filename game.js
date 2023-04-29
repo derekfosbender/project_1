@@ -1,6 +1,6 @@
 class Game {
     constructor(){
-      this.beginScreen = document.getElementById("screen-intro");
+      this.beginScreen = document.getElementById("screen-intro"); //use this to i guess attach to html
       this.beginGame = document.getElementById("gaming-screen");
       this.theEnd = document.getElementById("the-end");
       this.thePoints = document.getElementById("points");
@@ -24,13 +24,13 @@ class Game {
       this.theEndGame = false;
     }
   start() {  
-    this.beginGame.style.height = `${this.height}px`;  
+    this.beginGame.style.height = `${this.height}px`;  //taking to set dimensions on screen of the gaming screen
 
     this.beginGame.style.width = `${this.width}px`; 
     
-    this.beginScreen.style.display = "none";
+    this.beginScreen.style.display = "none";  //dont show screen
 
-    this.beginGame.style.display = "block";
+    this.beginGame.style.display = "block"; //show screen
 
     this.gameLoop()
 }
@@ -41,7 +41,7 @@ gameLoop(){
   if(this.theEndGame){
     return;
   }
-  this.update();
+  this.update(); //thsi is to update movement,to see if collided,push enemies,points
   window.requestAnimationFrame(() => this.gameLoop());
 }
  update(){
@@ -49,23 +49,23 @@ gameLoop(){
   this.player.move();
 
   for(let i=0; i<this.enemies.length; i++){
-    const enemy = this.enemies[i];
+    const enemy = this.enemies[i]; //loop through enemies see if on screen or hit player
 
     enemy.move();
    
-   if(enemy.right > this.width){
+   if(enemy.right > this.width){ //where the enemy will come from 
    enemy.element.remove();
-   this.enemies.splice(0,1);
+   this.enemies.splice(0,1); // remove from array
    i--;
    
-   }else if (this.player.didCollide(enemy)){
+   }else if (this.player.didCollide(enemy)){ //if did collide need to remove life
       enemy.element.remove();
       
       this.enemies.splice(0, 1);
       
-      this.lives --;
+      this.lives --; 
       
-      this.theLives.innerText = this.lives;
+      this.theLives.innerText = this.lives; //update on screen 
       
       i--;
     }
@@ -76,7 +76,7 @@ gameLoop(){
   }
 
   if(Math.random() > 0.98 && this.enemies.length < 1){
-    this.enemies.push(new Enemy(this.beginGame));
+    this.enemies.push(new Enemy(this.beginGame)); //pushing out new enemy if not detected
   }
   for(let i=0; i<this.coins.length; i++){
     const coin  = this.coins[i];
@@ -147,7 +147,7 @@ if(extra.right > this.width){
  }
 }
 endGame() {
-  this.player.element.remove();
+  this.player.element.remove(); //over remove player go to end screen
   this.enemies.forEach(enemy => enemy.element.remove());
 
   this.theEndGame = true;

@@ -14,7 +14,7 @@ class Enemy {
         this.element.style.right = `${this.right}px`;
         this.element.style.top = `${this.top}px`;
 
-        this.beginGame.appendChild(this.element);
+        this.beginGame.appendChild(this.element); //
     }
 updatePosition() {
     this.element.style.right = `${this.right}px`;
@@ -22,7 +22,7 @@ updatePosition() {
 }
 
 move() {
-    this.right += 6;
+    this.right += 6; //speed 
 
     this.updatePosition();
 }
